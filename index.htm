@@ -1,265 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Street Café – Pachore</title>
-<style>
-*{margin:0; padding:0; box-sizing:border-box;}
-body{
-    font-family: 'Poppins', Arial, sans-serif;
-    background:#fff;
-    color:#333;
-}
-header{
-    text-align:center;
-    padding:20px;
-    background:white;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-header img{
-    width:130px;
-    border-radius:50%;
-    animation: fadeIn 1.5s;
-}
-@keyframes fadeIn {0% {opacity:0;} 100% {opacity:1;}}
-nav{
-    background:#ff4f85;
-    padding:12px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:999;
-}
-nav a{
-    text-decoration:none;
-    color:white;
-    margin:0 15px;
-    font-size:18px;
-    font-weight:bold;
-    transition:0.3s;
-}
-nav a:hover{color:#ffeaea;}
-.hero{
-    width:100%;
-    height:350px;
-    overflow:hidden;
-    position:relative;
-}
-.slide{
-    width:100%;
-    height:100%;
-    position:absolute;
-    animation:slideShow 12s infinite;
-    object-fit:cover;
-}
-.slide:nth-child(2){animation-delay:4s;}
-.slide:nth-child(3){animation-delay:8s;}
-@keyframes slideShow{
-    0%{opacity:0;}
-    10%{opacity:1;}
-    30%{opacity:1;}
-    40%{opacity:0;}
-    100%{opacity:0;}
-}
-section{padding:40px 20px;}
-h2{
-    font-size:28px;
-    color:#ff4f85;
-    margin-bottom:15px;
-}
-.menu-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap:20px;
-    margin-top:20px;
-}
-.card{
-    background:white;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    overflow:hidden;
-    text-align:center;
-    transition:0.3s;
-}
-.card:hover{transform:scale(1.03);}
-.card img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
-}
-.card h3{margin:12px 0 5px;}
-.card p{padding-bottom:15px;}
-.whatsapp{
-    background:#25D366;
-    color:white;
-    padding:15px 25px;
-    font-size:20px;
-    display:inline-block;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    margin-top:20px;
-}
-.whatsapp:hover{background:#1eb150;}
-footer{
-    background:#333;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:30px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Street Café – Pachore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #fff 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            animation: slideDown 1s ease-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        nav {
+            background: linear-gradient(90deg, #2196F3, #64B5F6);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        nav a:hover {
+            color: #e3f2fd;
+            transform: translateY(-3px);
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: #e3f2fd;
+            transition: all 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .hero {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2);
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            animation: slideShow 15s infinite;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+        .slide:nth-child(2) { animation-delay: 5s; }
+        .slide:nth-child(3) { animation-delay: 10s; }
+        @keyframes slideShow {
+            0% { opacity: 0; transform: scale(1.1) rotate(1deg); }
+            10% { opacity: 1; transform: scale(1) rotate(0deg); }
+            30% { opacity: 1; transform: scale(1) rotate(0deg); }
+            40% { opacity: 0; transform: scale(1.1) rotate(-1deg); }
+            100% { opacity: 0; transform: scale(1.1) rotate(-1deg); }
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 32px;
+            color: #2196F3;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-10px) scale(1.02) rotate(1deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .card:hover img {
+            transform: scale(1.1) rotate(-1deg);
+        }
+        .card h3 {
+            margin: 15px 0 10px;
+            font-size: 22px;
+            color: #2196F3;
+        }
+        .card p {
+            padding: 0 15px 20px;
+            color: #666;
+        }
+        .whatsapp {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: 18px 30px;
+            font-size: 20px;
+            display: inline-block;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+            50% { box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5); }
+            100% { box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+        }
+        .whatsapp:hover {
+            background: linear-gradient(45deg, #1eb150, #0f6b5a);
+            transform: translateY(-3px) scale(1.05);
+        }
+        .fullmenu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .menu-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+        .menu-box:hover {
+            transform: translateY(-5px) rotate(0.5deg);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+        .menu-box strong {
+            color: #2196F3;
+            font-size: 22px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: linear-gradient(90deg, #333, #555);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            .menu-grid, .fullmenu-grid {
+                grid-template-columns: 1fr;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-    
-    <h1>The Street Café</h1>
-    <p>Fresh • Delicious • Refreshing</p>
-</header>
-<nav>
-    <a href="#home">Home</a>
-    <a href="#menu">Popular Items</a>
-    <a href="#fullmenu">Full Menu</a>
-    <a href="#contact">Contact</a>
-</nav>
-<section class="hero" id="home">
-    
-    <img src="coldcoffee.jpg" class="slide" alt="Cold Coffee">
-    
-</section>
-<section id="menu">
-    <h2>✨ Popular Items</h2>
-    <div class="menu-grid">
-        <div class="card">
-            <img src="pinkshake.jpg" alt="Pink Shake">
-            <h3>Special Pink Shake</h3>
-            <p>Sweet, creamy & topped with soft cake chunks.</p>
+    <header>
+        <h1>The Street Café</h1>
+        <p>Fresh • Delicious • Refreshing</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Popular Items</a>
+        <a href="#fullmenu">Full Menu</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section class="hero" id="home">
+        <img src="coldcoffee.jpg" class="slide" alt="Cold Coffee">
+        <img src="pinkshake.jpg" class="slide" alt="Pink Shake">
+        <img src="Oreoshak.jpg" class="slide" alt="Oreo Shake">
+    </section>
+    <section id="menu">
+        <h2>✨ Popular Items</h2>
+        <div class="menu-grid">
+            <div class="card">
+                <img src="pinkshake.jpg" alt="Pink Shake">
+                <h3>Special Pink Shake</h3>
+                <p>Sweet, creamy & topped with soft cake chunks.</p>
+            </div>
+            <div class="card">
+                <img src="coldcoffee.jpg" alt="Cold Coffee">
+                <h3>Classic Cold Coffee</h3>
+                <p>Rich taste with chocolate drizzle.</p>
+            </div>
+            <div class="card">
+                <img src="Oreoshak.jpg" alt="Oreo Shake">
+                <h3>Oreo Shake</h3>
+                <p>Creamy, thick & topped with soft cake bites.</p>
+            </div>
+            <div class="card">
+                <img src="vegloadedsandwizz.jpg" alt="Sandwich">
+                <h3>Premium Sandwizza</h3>
+                <p>Strong flavour with chocolate drizzle.</p>
+            </div>
+            <div class="card">
+                <img src="pasta.jpg" alt="Pasta">
+                <h3>Cheesy White Sauce Pasta</h3>
+                <p>Loaded with olives, veggies & extra cheese.</p>
+            </div>
+            <div class="card">
+                <img src="watermelon.mojito.jpg" alt="Watermelon Mojito">
+                <h3>Watermelon Mojito</h3>
+                <p>Refreshing blend of watermelon, mint & ice.</p>
+            </div>
         </div>
-        <div class="card">
-            <img src="coldcoffee.jpg" alt="Cold Coffee">
-            <h3>Classic Cold Coffee</h3>
-            <p>Rich taste with chocolate drizzle.</p>
+        <a class="whatsapp" href="https://wa.me/919999597107?text=Hi%20I%20want%20to%20order%20from%20The%20Street%20Cafe">📲 Order on WhatsApp</a>
+    </section>
+    <section id="fullmenu">
+        <h2>📋 Full Menu</h2>
+        <div class="fullmenu-grid">
+            <div class="menu-box">
+                <strong>🥪 Sandwich</strong><br>
+                - Masala Sandwich — 70<br>• Veg Sandwich — 80<br>• Cheese Chutney — 80<br>• Paneer Tandoori — 90<br>• Cheese & Corn — 100<br>• Bahubali — 130<br>
+            </div>
+            <div class="menu-box">
+                <strong>🥤 Shakes</strong><br>
+                - Vanilla — 80<br>• Chocolate — 90<br>• Strawberry — 90<br>• Mango — 90<br>• Rose Rabri — 90<br>• Matka Kulfi — 110<br>• Kit Kat — 100<br>• Choco Oreo — 100<br>• Rasmalai — 110<br>• Paan Fresh — 100<br>
+            </div>
+            <div class="menu-box">
+                <strong>🍝 Maggi</strong><br>
+                - Masala — 50<br>• Veg Masala — 70<br>• Cheese — 80<br>• Peri Peri — 80<br>• Tandoori — 90<br>• Corn & Cheese — 100<br>
+            </div>
+            <div class="menu-box">
+                <strong>🍟 Fries</strong><br>
+                - Regular — 90<br>• Peri Peri — 100<br>• Cheese — 130<br>
+            </div>
+            <div class="menu-box">
+                <strong>⭐ TSC Specials</strong><br>
+                - Potato Wedges — 100<br>• Peri Peri Wedges — 110<br>• Cheesy Wedges — 140<br>• Chat Basket — 85<br>• Spring Roll — 100<br>• Indori Samosa — 30<br>
+            </div>
+            <div class="menu-box">
+                <strong>🍕 Pizza</strong><br>
+                - Margareta — 99<br>• Onion Tomato Cap — 140<br>• Golden Corn — 140<br>• Tandoori Paneer — 150<br>• Corn & Paneer — 160<br>
+            </div>
+            <div class="menu-box">
+                <strong>🍔 Burger</strong><br>
+                - Aloo Tikki — 60<br>• Veg — 80<br>• Veg Cheese — 90<br>• Veg Tandoori — 90<br>• Paneer — 100<br>• Double Decker — 140<br>
+            </div>
+            <div class="menu-box">
+                <strong>🥙 Sandwizza</strong><br>
+                - Veg Loaded — 100<br>• Golden Corn — 110<br>• Onion Tomato Cap — 120<br>• Tandoori Paneer — 120<br>• Paneer Cap Onion — 110<br>• Paneer Corn & Cheese — 140<br>• Cheese Overloaded — 150<br>
+            </div>
+            <div class="menu-box">
+                <strong>🍹 Mojito</strong><br>
+                - Virgin Wave — 90<br>• Cool Cucumber — 90<br>• Watermelon — 100<br>• Blue Lagoon — 100<br>• Green Apple — 100<br>• Mango Mint — 110<br>• Chilli Mint — 100<br>• Blue Magic — 149<br>
+            </div>
+            <div class="menu-box">
+                <strong>🍸 Coolers</strong><br>
+                - Masala Lemonade — 60<br>• AAM Panna — 60<br>
+            </div>
+            <div class="menu-box">
+                <strong>🌮 Vada Pav</strong><br>
+                - Bombay — 50<br>• Cheese — 70<br>
+            </div>
+            <div class="menu-box">
+                <strong>☕ Coffee</strong><br>
+                - Hot Coffee — 20<br>• Cappuccino — 40<br>• Hot Chocolate — 40<br>• Black Coffee — 40<br>• Cold Coffee — 70<br>
+            </div>
+            <div class="menu-box">
+                <strong>🥟 MOMOS (Steam / Fry / Kurkure)</strong><br>
+                - Veg — 80 / 90 / 110<br>• Paneer — 90 / 100 / 120<br>• Cheese & Corn — 100 / 110 / 140<br>
+            </div>
         </div>
-        <div class="card">
-            <img src="Oreoshak.jpg" alt="Oreo Shake">
-            <h3>Oreo Shake</h3>
-            <p>Creamy, thick & topped with soft cake bites.</p>
-        </div>
-        <div class="card">
-            <img src="vegloadedsandwizz.jpg" alt="Sandwich">
-            <h3>Premium Sandwizza</h3>
-            <p>Strong flavour with chocolate drizzle.</p>
-        </div>
-        <div class="card">
-            <img src="pasta.jpg" alt="Pasta">
-            <h3>Cheesy White Sauce Pasta</h3>
-            <p>Loaded with olives, veggies & extra cheese.</p>
-        </div>
-        <div class="card">
-            <img src="watermelon.mojito.jpg" alt="Watermelon Mojito">
-            <h3>Watermelon Mojito</h3>
-            <p>Refreshing blend of watermelon, mint & ice.</p>
-        </div>
-    </div>
-    <a class="whatsapp" href="https://wa.me/919999597107?text=Hi%20I%20want%20to%20order%20from%20The%20Street%20Cafe">📲 Order on WhatsApp</a>
-</section>
-<section id="fullmenu">
-    <h2>📋 Full Menu</h2>
-
-<style>
-.fullmenu-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap:20px;
-    margin-top:20px;
-}
-.menu-box{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-.menu-box strong{color:#ff4f85; font-size:20px;}
-</style>
-
-<div class="fullmenu-grid">
-
-<div class="menu-box">
-<strong>🥪 Sandwich</strong><br>
-• Masala Sandwich — 70<br>• Veg Sandwich — 80<br>• Cheese Chutney — 80<br>• Paneer Tandoori — 90<br>• Cheese & Corn — 100<br>• Bahubali — 130<br>
-</div>
-
-<div class="menu-box">
-<strong>🥤 Shakes</strong><br>
-• Vanilla — 80<br>• Chocolate — 90<br>• Strawberry — 90<br>• Mango — 90<br>• Rose Rabri — 90<br>• Matka Kulfi — 110<br>• Kit Kat — 100<br>• Choco Oreo — 100<br>• Rasmalai — 110<br>• Paan Fresh — 100<br>
-</div>
-
-<div class="menu-box">
-<strong>🍝 Maggi</strong><br>
-• Masala — 50<br>• Veg Masala — 70<br>• Cheese — 80<br>• Peri Peri — 80<br>• Tandoori — 90<br>• Corn & Cheese — 100<br>
-</div>
-
-<div class="menu-box">
-<strong>🍟 Fries</strong><br>
-• Regular — 90<br>• Peri Peri — 100<br>• Cheese — 130<br>
-</div>
-
-<div class="menu-box">
-<strong>⭐ TSC Specials</strong><br>
-• Potato Wedges — 100<br>• Peri Peri Wedges — 110<br>• Cheesy Wedges — 140<br>• Chat Basket — 85<br>• Spring Roll — 100<br>• Indori Samosa — 30<br>
-</div>
-
-<div class="menu-box">
-<strong>🍕 Pizza</strong><br>
-• Margareta — 99<br>• Onion Tomato Cap — 140<br>• Golden Corn — 140<br>• Tandoori Paneer — 150<br>• Corn & Paneer — 160<br>
-</div>
-
-<div class="menu-box">
-<strong>🍔 Burger</strong><br>
-• Aloo Tikki — 60<br>• Veg — 80<br>• Veg Cheese — 90<br>• Veg Tandoori — 90<br>• Paneer — 100<br>• Double Decker — 140<br>
-</div>
-
-<div class="menu-box">
-<strong>🥙 Sandwizza</strong><br>
-• Veg Loaded — 100<br>• Golden Corn — 110<br>• Onion Tomato Cap — 120<br>• Tandoori Paneer — 120<br>• Paneer Cap Onion — 110<br>• Paneer Corn & Cheese — 140<br>• Cheese Overloaded — 150<br>
-</div>
-
-<div class="menu-box">
-<strong>🍹 Mojito</strong><br>
-• Virgin Wave — 90<br>• Cool Cucumber — 90<br>• Watermelon — 100<br>• Blue Lagoon — 100<br>• Green Apple — 100<br>• Mango Mint — 110<br>• Chilli Mint — 100<br>• Blue Magic — 149<br>
-</div>
-
-<div class="menu-box">
-<strong>🍸 Coolers</strong><br>
-• Masala Lemonade — 60<br>• AAM Panna — 60<br>
-</div>
-
-<div class="menu-box">
-<strong>🌮 Vada Pav</strong><br>
-• Bombay — 50<br>• Cheese — 70<br>
-</div>
-
-<div class="menu-box">
-<strong>☕ Coffee</strong><br>
-• Hot Coffee — 20<br>• Cappuccino — 40<br>• Hot Chocolate — 40<br>• Black Coffee — 40<br>• Cold Coffee — 70<br>
-</div>
-
-<div class="menu-box">
-<strong>🥟 MOMOS (Steam / Fry / Kurkure)</strong><br>
-• Veg — 80 / 90 / 110<br>• Paneer — 90 / 100 / 120<br>• Cheese & Corn — 100 / 110 / 140<br>
-</div>
-
-</div>
-</section>
-<section id="contact">
-    <h2>📍 Contact Us</h2>
-    <p><strong>Address:</strong> Shop No. 6, Shri Ram Complex A, B Road, near Utsav Vatika, Pachore, MP 465683</p>
-    <p><strong>Phone:</strong> 09999597107</p>
-    <a class="whatsapp" href="https://wa.me/919999597107">Chat on WhatsApp</a>
-</section>
-<footer>
-    © 2025 The Street Café | Designed with AJ
-</footer>
+    </section>
+    <section id="contact">
+        <h2>📍 Contact Us</h2>
+        <p><strong>Address:</strong> Shop No. 6, Shri Ram Complex A, B Road, near Utsav Vatika, Pachore, MP 465683</p>
+        <p><strong>Phone:</strong> 09999597107</p>
+        <a class="whatsapp" href="https://wa.me/919999597107">Chat on WhatsApp</a>
+    </section>
+    <footer>
+        © 2025 The Street Café | Designed with AJ
+    </footer>
 </body>
 </html>
