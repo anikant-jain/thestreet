@@ -77,4 +77,111 @@ h2{
 .card{
     background:white;
     border-radius:12px;
-    box-shadow:0 4px
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    overflow:hidden;
+    text-align:center;
+    transition:0.3s;
+}
+.card:hover{transform:scale(1.03);}
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+.card h3{margin:12px 0 5px;}
+.card p{padding-bottom:15px;}
+.whatsapp{
+    background:#25D366;
+    color:white;
+    padding:15px 25px;
+    font-size:20px;
+    display:inline-block;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    margin-top:20px;
+}
+.whatsapp:hover{background:#1eb150;}
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+</style>
+</head>
+<body>
+<header>
+    <img src="logo.png" alt="The Street Cafe Logo">
+    <h1>The Street Café</h1>
+    <p>Fresh • Delicious • Refreshing</p>
+</header>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Popular Items</a>
+    <a href="#fullmenu">Full Menu</a>
+    <a href="#contact">Contact</a>
+</nav>
+<section class="hero" id="home">
+    <img src="pinkshake.jpg" class="slide" alt="Pink Shake">
+    <img src="coldcoffee.jpg" class="slide" alt="Cold Coffee">
+    <img src="logo.png" class="slide" alt="Cafe Logo">
+</section>
+<section id="menu">
+    <h2>✨ Popular Items</h2>
+    <div class="menu-grid">
+        <div class="card">
+            <img src="pinkshake.jpg" alt="Pink Shake">
+            <h3>Special Pink Shake</h3>
+            <p>Sweet, creamy & topped with soft cake chunks.</p>
+        </div>
+        <div class="card">
+            <img src="coldcoffee.jpg" alt="Cold Coffee">
+            <h3>Classic Cold Coffee</h3>
+            <p>Rich taste with chocolate drizzle.</p>
+        </div>
+        <div class="card">
+            <img src="Oreoshak.jpg" alt="Oreo Shake">
+            <h3>Oreo Shake</h3>
+            <p>Creamy, thick & topped with soft cake bites.</p>
+        </div>
+        <div class="card">
+            <img src="vegloadedsandwizz.jpg" alt="Sandwich">
+            <h3>Premium Sandwizza</h3>
+            <p>Strong flavour with chocolate drizzle.</p>
+        </div>
+        <div class="card">
+            <img src="pasta.jpg" alt="Pasta">
+            <h3>Cheesy White Sauce Pasta</h3>
+            <p>Loaded with olives, veggies & extra cheese.</p>
+        </div>
+        <div class="card">
+            <img src="watermelon.mojito.jpg" alt="Watermelon Mojito">
+            <h3>Watermelon Mojito</h3>
+            <p>Refreshing blend of watermelon, mint & ice.</p>
+        </div>
+    </div>
+    <a class="whatsapp" href="https://wa.me/919999597107?text=Hi%20I%20want%20to%20order%20from%20The%20Street%20Cafe">📲 Order on WhatsApp</a>
+</section>
+<section id="fullmenu">
+    <h2>📋 Full Menu</h2>
+    <p>
+       • Shakes & Cold Coffee <br>
+       • French Fries, Burgers, Sandwiches <br>
+       • Mojito, Ice Tea, Cold Drinks <br>
+       • Special Thick Shakes <br>
+       • And many more tasty items!
+    </p>
+</section>
+<section id="contact">
+    <h2>📍 Contact Us</h2>
+    <p><strong>Address:</strong> Shop No. 6, Shri Ram Complex A, B Road, near Utsav Vatika, Pachore, MP 465683</p>
+    <p><strong>Phone:</strong> 09999597107</p>
+    <a class="whatsapp" href="https://wa.me/919999597107">Chat on WhatsApp</a>
+</section>
+<footer>
+    © 2025 The Street Café | Designed with AJ
+</footer>
+</body>
+</html>
